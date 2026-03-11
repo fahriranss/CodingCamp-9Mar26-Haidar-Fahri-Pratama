@@ -117,6 +117,19 @@ body::before {
   min-height: 100vh;
 }
 
+@media (min-width: 1200px) {
+  .dashboard {
+    grid-template-columns: repeat(2, 1fr);
+    padding: var(--spacing-xxl);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .dashboard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* ===== Module Cards ===== */
 .module {
   background-color: var(--color-bg);
@@ -328,12 +341,12 @@ ul {
 @media (max-width: 768px) {
   .dashboard {
     grid-template-columns: 1fr;
-    padding: var(--spacing-md);
-    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    gap: var(--spacing-lg);
   }
   
   .module {
-    padding: var(--spacing-md);
+    padding: var(--spacing-lg);
   }
   
   h1 {
@@ -342,6 +355,17 @@ ul {
   
   h2 {
     font-size: var(--font-size-xl);
+  }
+  
+  /* Better touch targets for mobile */
+  button {
+    min-height: 44px;
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+  
+  input[type="text"],
+  input[type="url"] {
+    min-height: 44px;
   }
 }
 
@@ -352,17 +376,36 @@ ul {
   }
   
   .dashboard {
+    padding: var(--spacing-md);
+    gap: var(--spacing-md);
+  }
+  
+  .module {
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+  }
+  
+  button {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-base);
+    min-height: 44px;
+  }
+  
+  /* Improve text readability on small screens */
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+/* Extra small mobile (320px and below) */
+@media (max-width: 320px) {
+  .dashboard {
     padding: var(--spacing-sm);
     gap: var(--spacing-sm);
   }
   
   .module {
-    padding: var(--spacing-sm) var(--spacing-md);
-  }
-  
-  button {
-    padding: var(--spacing-xs) var(--spacing-sm);
-    font-size: var(--font-size-sm);
+    padding: var(--spacing-sm);
   }
 }
 
@@ -370,6 +413,13 @@ ul {
 @media (min-width: 1200px) {
   .dashboard {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Ultra-wide screens (1600px and above) */
+@media (min-width: 1600px) {
+  .dashboard {
+    max-width: 1400px;
   }
 }
 
@@ -543,7 +593,7 @@ ul {
   }
   
   .time-display {
-    font-size: var(--font-size-xxl);
+    font-size: 3rem;
   }
   
   .date-display {
@@ -556,26 +606,33 @@ ul {
   
   .btn-preset {
     padding: var(--spacing-xs) var(--spacing-sm);
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
+    min-height: 36px;
   }
   
   .timer-display {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
   
   .timer-controls button {
-    min-width: 80px;
-    padding: var(--spacing-sm) var(--spacing-md);
+    min-width: 90px;
+    padding: var(--spacing-md) var(--spacing-lg);
   }
 }
 
 @media (max-width: 480px) {
+  .greeting-module {
+    padding: var(--spacing-lg);
+  }
+  
   .greeting-text {
     font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-md);
   }
   
   .time-display {
-    font-size: var(--font-size-xl);
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
   }
   
   .date-display {
@@ -583,13 +640,15 @@ ul {
   }
   
   .timer-presets {
-    gap: var(--spacing-xs);
+    gap: 4px;
+    justify-content: space-between;
   }
   
   .btn-preset {
-    padding: 4px 8px;
-    font-size: 0.7rem;
-    min-width: 50px;
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    min-width: 45px;
+    flex: 1;
   }
   
   .timer-display {
@@ -599,12 +658,14 @@ ul {
   
   .timer-controls {
     gap: var(--spacing-sm);
+    width: 100%;
   }
   
   .timer-controls button {
-    min-width: 70px;
-    padding: var(--spacing-xs) var(--spacing-sm);
-    font-size: var(--font-size-sm);
+    flex: 1;
+    min-width: 0;
+    padding: var(--spacing-md);
+    font-size: var(--font-size-base);
   }
 }
 
@@ -981,7 +1042,7 @@ ul {
   }
   
   .todo-item {
-    padding: var(--spacing-sm);
+    padding: var(--spacing-md);
   }
   
   .links-form {
@@ -997,7 +1058,7 @@ ul {
   }
   
   .links-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
 }
 
@@ -1008,48 +1069,54 @@ ul {
   }
   
   .todo-sort {
-    padding: var(--spacing-xs) var(--spacing-sm);
+    padding: var(--spacing-sm);
   }
   
   .todo-sort-label {
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
   }
   
   .todo-sort-select {
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
   }
   
   .todo-item {
     gap: var(--spacing-sm);
-    padding: var(--spacing-sm);
+    padding: var(--spacing-md);
   }
   
   .todo-checkbox {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
   }
   
   .todo-text {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
   }
   
   .todo-actions {
-    flex-direction: column;
+    flex-direction: row;
     gap: var(--spacing-xs);
   }
   
   .todo-edit-btn,
   .todo-delete-btn {
-    padding: var(--spacing-xs);
-    font-size: var(--font-size-xs);
+    padding: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    min-height: 36px;
+  }
+  
+  .links-list {
+    grid-template-columns: 1fr;
   }
   
   .link-card {
-    padding: var(--spacing-sm);
+    padding: var(--spacing-md);
   }
   
   .link-name {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
   }
 }
 
