@@ -12,7 +12,7 @@
 **A stunning, modern productivity dashboard with glassmorphism design** ✨  
 Built with pure vanilla JavaScript, HTML5, and CSS3 — no frameworks, no dependencies!
 
-[🚀 Live Demo](#) • [📖 Documentation](#-features) • [🎨 Design](#-design-features)
+[🚀 Live Demo](https://fahriranss.github.io/CodingCamp-9Mar26-HaidarFahriPratama/) • [📖 Documentation](#-features) • [🎨 Design](#-design-features)
 
 ---
 
@@ -128,7 +128,7 @@ Built with pure vanilla JavaScript, HTML5, and CSS3 — no frameworks, no depend
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/productivity-dashboard.git
+git clone https://github.com/fahriranss/CodingCamp-9Mar26-HaidarFahriPratama.git
 
 # 2. Open in browser
 open index.html
