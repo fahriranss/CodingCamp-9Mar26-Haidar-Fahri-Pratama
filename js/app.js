@@ -52,11 +52,11 @@ class ThemeManager {
     if (isDark) {
       body.classList.add(this.DARK_MODE_CLASS);
       localStorage.setItem(this.THEME_KEY, 'dark');
-      if (themeButton) themeButton.textContent = '☀️ Mode Terang';
+      if (themeButton) themeButton.textContent = '☀️ Light Mode';
     } else {
       body.classList.remove(this.DARK_MODE_CLASS);
       localStorage.setItem(this.THEME_KEY, 'light');
-      if (themeButton) themeButton.textContent = '🌙 Mode Gelap';
+      if (themeButton) themeButton.textContent = '🌙 Dark Mode';
     }
   }
 
